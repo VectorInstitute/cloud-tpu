@@ -8,7 +8,7 @@ If you are on the Vector cluster, you can't install the GCP CLI tool directly (p
 ```
 ~/google-cloud-sdk/bin/gcloud
 ```
-<br><br>
+<br>
 
 **upload** <br>
 Below is an example demonstrating how to move an example file from the cluster to the shared drive on the TPU VMs using the `scp` command.
@@ -98,3 +98,6 @@ In your Jupyter Notebooks, always define the following two environment variables
 %env XRT_TPU_CONFIG=localservice;0;localhost:51011
 %env XLA_USE_BF16=1
 ```
+
+# Related Issues
+Training on 8 TPU cores, for some reason, only works intermittently on GCP. You can see an example of this error in the autoencoder notebook. An issue has been opened by @markcoatsworth and I, and is being tracked by the folks at Google. You can view it here: https://github.com/pytorch/xla/issues/3947
